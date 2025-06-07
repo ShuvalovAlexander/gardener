@@ -1,0 +1,195 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+.container{
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* headre START */
+.header{
+    box-sizing: border-box;
+    backdrop-filter: blur(10px);
+    background: rgba(37, 73, 31, 0.652);
+}
+.header__nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+}
+.header__nav-list{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 80px;
+}
+.header__nav-link{
+    text-decoration: none;
+    color: #fff;
+}
+.header__nav-contact{
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+}
+.header__nav-contact-img{
+    width: 10px;
+    height: 15px;
+}
+.header__nav-contact-tel, 
+.header__nav-contact-geo{
+    display: flex;
+    column-gap: 10px;
+}
+.header__nav-contact-tel-link,
+.header__nav-contact-geo-link{
+    text-decoration: none;
+    color: rgb(255, 223, 158);
+}
+/* headre END */
+
+
+
+/* feedback form START */
+
+.feedback{
+    padding-top: 100px;
+    display: flex;
+    max-width: 900px;
+    margin: 0 auto;
+}
+.feedback-leaft{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgba(221, 184, 111, 0.63);
+    
+}
+.feedback-leaft img{
+    width: 200px;
+    padding: 25px;
+}
+.feedback-form {
+    width: 545px;
+    padding: 20px;
+    background: rgba(33, 26, 21, 0.76);
+}
+.feedback-title{
+    color: rgb(255, 223, 158);
+    padding-bottom: 5px;
+}
+.feedback-text{
+    color: rgb(255, 223, 158);
+    padding-bottom: 20px;
+}
+.form-group {
+  margin-bottom: 20px;
+}
+
+
+.form-group input[type="text"],
+.form-group input[type="tel"] {
+    padding: 10px;
+    width: 500px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.checkbox-group label {
+    margin: 0;
+    color: #fff;
+    font-size: 14px;
+}
+
+.checkbox-group a {
+    color: rgb(255, 223, 158);
+    text-decoration: none;
+}
+
+.checkbox-group a:hover {
+    text-decoration: underline;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background: rgb(255, 126, 53);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.submit-btn {
+    background: rgb(255, 126, 53);
+    animation: pulse 1.5s infinite;
+    cursor: pointer;
+}
+
+/* feedback form END */
+
+
+
+/* footer START */
+
+.footer{
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 50px;
+    
+    margin-top: 100px;
+
+}
+.logo-footer{
+    padding-bottom: 50px;
+}
+.footer__nav-contact{
+    display: flex;
+    padding-top: 100px;
+    align-items: center;
+    gap: 20px;
+}
+.footer__nav-contact-tel,
+.footer__nav-contact-geo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.footer__nav-contact-geo-link,
+.footer__nav-contact-tel-link{
+    color: #fff;
+    text-decoration: none;
+}
+.footer__wrap{
+    display: flex;
+    gap: 50px;
+    margin: 0 auto;
+    max-width: 1000px;
+}
+.footer__nav-list{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.footer__nav-link{
+    color: #fff;
+    text-decoration: none;
+}
+/* footer END */

@@ -1,0 +1,134 @@
+{% extends 'main/layout.html' %} 
+{% load static %} 
+
+{% block title %} Главная {% endblock title %}
+
+{% block extra_styles %}
+<link rel="stylesheet" href="{% static 'main/style/index.css' %}" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+{% endblock extra_styles %} 
+
+{% block content %}
+<main class="main">
+  <section class="container">
+    <!-- hero START -->
+    <div class="hero">
+      <img
+        class="hero__background-image"
+        src="{% static 'main/image/main-background.png' %}"
+        alt="background-image"
+      />
+      <div class="hero__content">
+        <div class="hero__content-text">
+          <img
+            src="{% static 'main/image/LOGO (1).png' %}"
+            alt="logo"
+            class="hero__content-text-logo"
+          />
+          <h2 class="hero__content-text-slogan">
+            Вам нужно все для сада и огорода? <br />
+            Поздравляем, вы попали туда - куда надо!
+          </h2>
+          <a href="/katalog" class="hero__content-text-btn" style="text-decoration: none; color: #fff;">В каталог</a>
+        </div>
+        <div class="hero__content-social">
+          <a href="#" class="hero__content-social-link">
+            <img src="{% static 'main/image/icons/social-insta.png' %}" alt="social-icon" class="hero__content-social-icon" />
+          </a>
+          <a href="#" class="hero__content-social-link">
+            <img src="{% static 'main/image/icons/social-whatsap.png' %}" alt="social-icon" class="hero__content-social-icon" />
+          </a>
+          <a href="mailto:mail.ru" class="hero__content-social-link">
+            <img src="{% static 'main/image/icons/social-mail.png' %}" alt="social-icon" class="hero__content-social-icon" />
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- hero END -->
+
+    <!-- shortly about START -->
+    <div class="shortly_about">
+      <div class="shortly_about__graf">
+        <img src="{% static 'main/image/icons/icon-three.png' %}" alt="icon-three" class="shortly_about__graf-icon_three">
+        <hr class="shortly_about__graf-hr">
+      </div>
+      <div class="shortly_about__content">
+        <h4 class="shortly_about__content-title">О компании</h4>
+        <p class="shortly_about__content-text">Компания Gardener уже более 10 лет занимается благоустройством и уходом за садовыми участками в Санкт-Петербурге и Ленинградской области. За это время мы реализовали более 60 проектов и обрели свыше 20 постоянных клиентов, которые доверяют нам свои участки. <br>
+          Мы ценим каждого клиента и стремимся к тому, чтобы результат нашей работы приносил вам только радость. Доверьте свой сад профессионалам! 🌿</p>
+        <img class="shortly_about__content_bg-flower-img" src="{% static 'main/image/bg-flower.png' %}" alt="bg-flower-img">
+      </div>
+    </div>
+    <!-- shortly about END -->
+
+
+    <!-- slider START -->
+    <div class="swiper mySwiper">
+      <div class="product__graf">
+        <h4 class="product__graf-title">Акции</h4>
+        <div class="_graf">
+          <img src="{% static 'main/image/icons/icon-three.png' %}" alt="icon-three" class="_graf-icon_three">
+          <hr class="_graf-hr">
+        </div>
+      </div>
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="{% static 'main/image/slide1.webp' %}" alt=""></div>
+      <div class="swiper-slide"><img src="{% static 'main/image/slide2.webp' %}" alt=""></div>
+      <div class="swiper-slide"><img src="{% static 'main/image/slide3.webp' %}" alt=""></div>
+      <div class="swiper-slide"><img src="{% static 'main/image/slide1.webp' %}" alt=""></div>
+      <div class="swiper-slide"><img src="{% static 'main/image/slide2.webp' %}" alt=""></div>
+      <div class="swiper-slide"><img src="{% static 'main/image/slide3.webp' %}" alt=""></div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+    <!-- slider END -->
+
+    <!-- our cases START -->
+    <div class="our_cases" id="our-projects">
+      <div class="product__graf">
+        <h4 class="product__graf-title">Наши проекты</h4>
+        <div class="_graf">
+          <img src="{% static 'main/image/icons/icon-three.png' %}" alt="icon-three" class="_graf-icon_three">
+          <hr class="_graf-hr">
+        </div>
+      </div>
+      <div class="our_cases__block">
+        <div class="our_cases__block-left">
+          <div class="image-container">
+            <img src="{% static 'main/image/Rectangle 51.png' %}" alt="" class="our_cases__block-img">
+            <div class="image-caption">
+              <p class="caption-text">Правдинское</p>
+            </div>
+          </div>
+        </div>
+        <div class="our_cases__block-right">
+          <div class="image-container">
+            <img src="{% static 'main/image/Rectangle 53.png' %}" alt="" class="our_cases__block-img">
+            <div class="image-caption">
+              <p class="caption-text">Репино</p>
+            </div>
+          </div>
+          <div class="image-container">
+            <img src="{% static 'main/image/Rectangle 54.png' %}" alt="" class="our_cases__block-img">
+            <div class="image-caption">
+              <p class="caption-text">Петергоф</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- our cases END -->
+
+    <!-- feedback form START -->
+    <!-- feedback form END -->
+
+  </section>
+</main>
+
+{% endblock content %}
+
+{% block js %}
+<script src="{% static 'main/js/main.js' %}"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+{% endblock js %}
