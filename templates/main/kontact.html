@@ -1,0 +1,43 @@
+{% extends 'main/layout.html' %} 
+{% load static %} 
+
+{% block title %} Контакты {% endblock title %}
+
+{% block extra_styles %}
+    <link rel="stylesheet" href="{% static 'main/style/kontact.css' %}" />
+{% endblock extra_styles %}
+
+{% block content %}
+<section class="container">
+    <h1>Наши контакты</h1>
+    
+    <div class="contact-info">
+        <p>Мы всегда рады помочь вам с выбором товаров для сада и огорода!</p>
+        
+        <p><strong>Телефон (1):</strong> <a href="tel:+78001234567">8 (800) 123-45-67</a></p>
+        <p><strong>Телефон (2):</strong> <a href="tel:+79819825004">+7 (981) 982-50-04</a></p>
+        <p><strong>Email:</strong> <a href="mailto:info@gardener.ru">info@gardener.ru</a></p>
+        <p><strong>Режим работы:</strong> Пн-Пт: 9:00-18:00, Сб-Вс: 10:00-16:00</p>
+
+        <div class="social-links">
+            <a href="#" class="social-link">
+                <img src="{% static 'main/image/icons/social-insta.png' %}" alt="Instagram" class="social-icon" />
+            </a>
+            <a href="#" class="social-link">
+                <img src="{% static 'main/image/icons/social-whatsap.png' %}" alt="WhatsApp" class="social-icon" />
+            </a>
+            <a href="mailto:mail.ru" class="social-link">
+                <img src="{% static 'main/image/icons/social-mail.png' %}" alt="Email" class="social-icon" />
+            </a>
+        </div>
+</div>
+    
+    
+</section>
+{% endblock content %}
+
+
+<!-- js scripts -->
+{% block js %}
+  
+{% endblock js %}

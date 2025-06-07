@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  {% load static %}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %}{% endblock title %}</title>
+
+
+  <!-- style`s START-->
+  <link rel="stylesheet" href="{% static 'main/style/style.css' %}" />
+  {% block extra_styles %}
+  {% endblock extra_styles %}
+  <!-- style`s END-->
+
+  <!-- fornt`s START -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
+  <!-- fornt`s END -->
+
+</head>
+
+<body>
+  <!-- header START -->
+  {% block header %}
+  <header class="header">
+    <section class="container">
+      <nav class="header__nav">
+        <ul class="header__nav-list">
+          <li class="header__nav-list-item">
+            <a class="header__nav-link" href='/'><img src="{% static 'main/image/icons/LOGO.png' %}" alt="logo" /></a>
+          </li>
+          <li class="header__nav-list-item">
+            <a class="header__nav-link" href="/katalog">Каталог</a>
+          </li>
+          <li class="header__nav-list-item">
+            <a class="header__nav-link" href="/about">О нас</a>
+          </li>
+          <li class="header__nav-list-item">
+            <a class="header__nav-link" href="/kontact">Контакты</a>
+          </li>
+        </ul>
+        <div class="header__nav-contact">
+          <div class="header__nav-contact-tel">
+            <img src="{% static 'main/image/icons/phon.png' %}" alt="phone" class="header__nav-contact-img" />
+            <a href="tel:+79819825004" class="header__nav-contact-tel-link">тел. +7 (981) 982-50-04</a>
+          </div>
+          <div class="header__nav-contact-geo">
+            <img src="{% static 'main/image/icons/location.png' %}" alt="location" class="header__nav-contact-img" />
+            <a href="#" class="header__nav-contact-geo-link">Москва и МО</a>
+          </div>
+        </div>
+      </nav>
+    </section>
+  </header>
+  {% endblock header %}
+  <!-- header END -->
+
+  <!-- content(main) START -->
+  {% block content %} {% endblock content %}
+  <!-- content(main) END -->
+
+  <section class="container">
+    <!-- feedback form START -->
+    {% block feedbackForm %}
+    <div class="feedback">
+      <div class="feedback-leaft">
+        <img src="{% static 'main/image/LOGO (1).png' %}" alt="logo">
+      </div>
+      <form class="feedback-form" action="{% url 'feedback' %}" method="POST">
+        {% csrf_token %}
+        <div class="">
+          <h2 class="feedback-title">Форма обратной связи</h2>
+          <p class="feedback-text">Если остались еще вопросы, заполните форму и мы с вами свяжемся</p>
+        </div>
+        <div class="form-group">
+          {{ form.name }}
+          {{ form.name.errors }}
+        </div>
+        <div class="form-group">
+          {{ form.phone }}
+          {{ form.phone.errors }}
+        </div>
+        <div class="form-group checkbox-group">
+          {{ form.agree }} <label for="agree">Я согласен(а) с <a href="/privacy-policy" target="_blank">политикой
+              конфиденциальности</a></label>
+          {{ form.agree.errors }}
+        </div>
+        <button type="submit" class="submit-btn">Отправить</button>
+      </form>
+    </div>
+    {% endblock feedbackForm %}
+    <!-- feedback form END -->
+  </section>
+
+
+  <!-- footer START -->
+  {% block footer %}
+  <footer class="footer">
+    <div class="footer__wrap">
+      <div class="map">
+        <iframe
+          src="https://yandex.ru/map-widget/v1/?um=constructor%3A9bf979b8c02c9540dc6d4ccd92202da1994158447d227cee96325df5cbae84ee&amp;source=constructor"
+          width="500" height="400" frameborder="0"></iframe>
+      </div>
+      <nav class="footer__nav">
+        <ul class="footer__nav-list">
+          <li class="footer__nav-list-item logo-footer">
+            <a class="footer__nav-link" href='/'><img src="{% static 'main/image/icons/LOGO.png' %}" alt="logo" /></a>
+          </li>
+          <li class="footer__nav-list-item">
+            <a class="footer__nav-link" href="/katalog">Каталог</a>
+          </li>
+          <li class="footer__nav-list-item">
+            <a class="footer__nav-link" href="/about">О нас</a>
+          </li>
+          <li class="footer__nav-list-item">
+            <a class="footer__nav-link" href="/kontact">Контакты</a>
+          </li>
+        </ul>
+        <div class="footer__nav-contact">
+          <div class="footer__nav-contact-tel">
+            <img src="{% static 'main/image/icons/phon.png' %}" alt="phone" class="footer__nav-contact-img" />
+            <a href="tel:+79819825004" class="footer__nav-contact-tel-link">тел. +7 (981) 982-50-04</a>
+          </div>
+          <div class="footer__nav-contact-geo">
+            <img src="{% static 'main/image/icons/location.png' %}" alt="location" class="footer__nav-contact-img" />
+            <a href="#" class="footer__nav-contact-geo-link">Москва и МО</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </footer>
+  {% endblock footer %}
+  <!-- footer END -->
+
+  <!-- js START -->
+  {% block js %}
+  {% endblock js %}
+  <!-- js END -->
+</body>
+
+</html>

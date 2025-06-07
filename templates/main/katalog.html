@@ -1,0 +1,32 @@
+{% extends 'main/layout.html' %} 
+{% load static %} 
+
+{% block title %} Каталог {% endblock title %}
+
+{% block extra_styles %}
+<link rel="stylesheet" href="{% static 'main/style/katalog.css' %}" />
+{% endblock extra_styles %}
+
+{% block content %}
+<section class="container">
+    <div class="product-list">
+        {% for product in products %}
+        <div class="product-card">
+            <img src="{{ product.image.url }}" alt="{{ product.title }}" class="product-image">
+            <h3 class="product-title">{{ product.title }}</h3>
+            <div class="product-price">{{ product.price }} ₽</div>
+            <div class="product-actions">
+                <a href="{% url 'productCard' product.id %}" class="add-to-cart">Купить</a>
+                <a href="#" class="favorite-btn">♥</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock content %}
+
+
+<!-- js scripts -->
+{% block js %}
+  
+{% endblock js %}

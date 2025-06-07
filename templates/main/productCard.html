@@ -1,0 +1,97 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block title %} {{ product.title }} {% endblock title %}
+
+{% block extra_styles %}
+<link rel="stylesheet" href="{% static 'main/style/product card.css' %}" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+{% endblock extra_styles %}
+
+{% block content %}
+<section class="container">
+  <main class="main">
+    <section class="product-card">
+      <div class="product-card__leaft-block">
+        <section class="gallery">
+          <div class="swiper-container main-slider">
+            <div class="swiper-wrapper">
+              <!-- Основное изображение -->
+              <div class="swiper-slide">
+                <img src="{{ product.image.url }}" alt="{{ product.title }}" />
+              </div>
+              <!-- Дополнительное изображение, если есть -->
+              {% if product.additional_image %}
+              <div class="swiper-slide">
+                <img src="{{ product.additional_image.url }}" alt="{{ product.title }} - дополнительное изображение" />
+              </div>
+              {% endif %}
+            </div>
+            <div class="swiper-scrollbar"></div>
+          </div>
+
+          <div class="thumbnail-container">
+            <div class="swiper-container thumbnail-slider">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img src="{{ product.image.url }}" alt="{{ product.title }}" />
+                </div>
+                {% if product.additional_image %}
+                <div class="swiper-slide">
+                  <img src="{{ product.additional_image.url }}" alt="{{ product.title }} - миниатюра" />
+                </div>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="product-card__midle-block">
+        <div class="midle-block__midle">
+          <h3>Характеристики</h3>
+          <div>
+            {{ product.characteristics|linebreaks }}
+          </div>
+        </div>
+
+        <div class="midle-block__bottom">
+          <h3>Описание</h3>
+          <p>
+            {{ product.description|linebreaks }}
+          </p>
+        </div>
+      </div>
+
+      <div class="product-card__right-block">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          {% if product.old_price %}
+          <h4 class="right-block__cost-main" style="text-decoration: line-through;">{{ product.old_price }} ₽</h4>
+          {% endif %}
+          
+          {% if discount_percent %}
+          <span class="right-block__sale-text">- {{ discount_percent }} %</span>
+          {% endif %}
+
+        </div>
+        <h3 class="right-block__cost-text">{{ product.price }} ₽</h3>
+
+        {% if product.old_price %}
+        {% endif %}
+
+        <a href="{% url 'make_order' %}?product={{ product.title }}&price={{ product.price }}"
+          class="right-block__cart-btn">
+          Купить
+        </a>
+
+      </div>
+    </section>
+  </main>
+</section>
+{% endblock content %}
+
+{% block js %}
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="{% static 'main/js/index.js' %}"></script>
+<script src="{% static 'main/js/product_card.js' %}"></script>
+{% endblock js %}
